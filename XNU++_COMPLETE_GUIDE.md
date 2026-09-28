@@ -926,3 +926,13 @@ For security-sensitive features, source presence and successful compilation must
 ```
 
 **XNU++ is the platform layer. XNU remains the kernel foundation.**
+**note!**
+XNU++ original code:
+GNU Affero General Public License v3.0
+
+XNU-derived code:
+Apple Public Source License 2.0
+and applicable upstream licenses
+
+Third-party components:
+See their respective license notices.

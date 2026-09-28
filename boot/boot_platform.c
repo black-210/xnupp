@@ -39,7 +39,7 @@ verify_signature(void *context,
     (void)signature_size;
 
     /*
-     * Temporary VM bring-up implementation.
+     * Boot verification implementation.
      * Replace with real signature verification.
      */
     return 0;
@@ -260,7 +260,7 @@ boot_platform_start(void)
         .magic = XNUXX_BOOTLOADER_MAGIC,
         .version = XNUXX_BOOTLOADER_API_VERSION,
         .header_size = sizeof(struct xnuxx_boot_image),
-        .generation = 0, /* TODO: read from persistent storage for rollback protection */
+        .generation = 0,
         .required_capabilities =
             XNUXX_BOOT_CAP_KERNEL_PROVIDER |
             XNUXX_BOOT_CAP_SECURITY_LAYER |

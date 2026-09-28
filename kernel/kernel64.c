@@ -16,7 +16,7 @@
  *       BSD/IOKit
  *
  * XNU remains the primary provider when linked.
- * Native code exists as an independent fallback/bring-up provider.
+ * Native code provides the xnu++ platform provider.
  */
 
 #define VGA_MEMORY       0xB8000
@@ -48,7 +48,7 @@ enum xnuxx_provider_type {
 };
 
 /*
- * These are weak so the native bring-up kernel can still link
+ * These are weak so the xnu++ platform provider can still link
  * when the XNU provider is not part of the current image.
  *
  * A real XNU provider supplies these symbols.
@@ -631,7 +631,7 @@ static int provider_init(void)
     }
 
     /*
-     * Native provider is a fallback/bring-up path.
+     * Native provider is an xnu++ platform provider.
      */
     if (native_provider_init() == 0) {
         active_provider =
@@ -733,7 +733,7 @@ void kernel_main(uint32_t multiboot_info)
 
     /*
      * Native console/keyboard loop is only used by the
-     * native bring-up provider.
+     * xnu++ platform provider.
      *
      * A real XNU provider owns its own scheduler/idle path.
      */

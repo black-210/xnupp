@@ -10,7 +10,7 @@ long_mode_start:
     orl $0x20, %eax
     movl %eax, %cr4
 
-    /* Load temporary page table */
+    /* Load boot page table */
     leal boot_pml4, %eax
     movl %eax, %cr3
 

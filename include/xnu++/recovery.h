@@ -30,5 +30,8 @@ struct xnuxx_recovery_record {
 int xnuxx_recovery_enter(enum xnuxx_recovery_reason, uint64_t generation);
 int xnuxx_recovery_record(const struct xnuxx_recovery_record *);
 int xnuxx_recovery_clear(uint64_t generation);
-
+int xnuxx_recovery_get(struct xnuxx_recovery_record *record, uint64_t *generation);
+int xnuxx_recovery_get_latest(struct xnuxx_recovery_record *record);
+int xnuxx_recovery_set_mode(enum xnuxx_recovery_mode mode);
+int xnuxx_recovery_get_mode(enum xnuxx_recovery_mode *mode);
 #endif

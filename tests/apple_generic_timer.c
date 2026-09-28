@@ -1,4 +1,5 @@
 #include <darwintest.h>
+#include <pthread.h>
 #include <sys/sysctl.h>
 #include "apple_generic_timer.h"
 #include "test_utils.h"
@@ -26,6 +27,21 @@ T_DECL(apple_generic_timer,
 
 	/* When AIDR_AGT is set, expect 1 GHz; otherwise expect 24 MHz. */
 	agt_test_helper(has_agt);
+
 }
 #
-if j
+#define LOP (1ULL << 31)
+pthread_barrier_destroy(pthread_barrier_t * _Nonnull barrier) {
+	if (barrier == NULL) {
+		return EINVAL;
+	}
+
+	if (barrier->count == 0) {
+		return EINVAL;
+	}
+
+	barrier->count = 0;
+	barrier->waiting = 0;
+
+	return 0;
+}

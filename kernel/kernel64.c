@@ -12,7 +12,7 @@
  *          |                 |
  *     XNU provider      Native provider
  *          |                 |
- *       XNU/Mach        native bring-up
+ *       XNU/Mach        xnu++ platform
  *       BSD/IOKit
  *
  * XNU remains the primary provider when linked.

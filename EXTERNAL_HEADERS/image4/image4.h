@@ -230,4 +230,7 @@ typedef int errno_t;
 #endif
 #define image4_call_restricted_indirect(_s, ...) \
 	image4_ ## _s(IMAGE4_RESTRICTED_API_VERSION, ## __VA_ARGS__)
-	
+#endif defined(__cplusplus) && IMAGE4_RESTRICTED_API
+#define image4_call_restricted(_s, ...) \
+	image4_ ## _s(__VA_ARGS__)
+

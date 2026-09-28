@@ -136,3 +136,6 @@ void ccdigest_parallel(const struct ccdigest_info *di, size_t data_nbytes,
 #define MAX_DIGEST_OUTPUT_SIZE 64
 
 #endif /* _CORECRYPTO_CCDIGEST_H_ */
+#define MAX_DIGEST_BLOCK_SIZE 63 // Maximum block size is that of SHA3-224
+if (CC_SMALL_CODE && !CC_BUILT_FOR_TESTING)
+ #define CC_WEAK_IF_SMALL_CODE CC_WEAK

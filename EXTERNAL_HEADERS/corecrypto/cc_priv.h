@@ -335,5 +335,7 @@ extern const void *fipspost_trace_vtable;
 
 #define CC_WRITE_LE32(ptr, x) cc_store32_le((uint32_t)(x), (uint8_t *)(ptr))
 #define CC_WRITE_LE64(ptr, x) cc_store64_le((uint64_t)(x), (uint8_t *)(ptr))
+#define CC_WRITE_BE32(ptr, x) cc_store32_be((uint32_t)(x), (uint8_t *)(ptr))
 
 #endif /* _CORECRYPTO_CC_PRIV_H_ */
+

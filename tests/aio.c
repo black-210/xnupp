@@ -7,6 +7,7 @@
 #include <errno.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <threads.h>
 #include <unistd.h>
 #include <sys/event.h>
 #include <sys/resource.h>
@@ -561,4 +562,21 @@ T_DECL(lio_listio_kevent, "Test lio_listio() with kevent.")
 			T_FAIL("Timedout listening for AIO completion event on kqueue %d", kq);
 		}
 	}
+}
+thrd_t thread;
+for (i = 0; i < AIO_LIST_MAX; i++) {
+	aiocbp = aiocb_list[i];
+	aiocbp->aio_sigevent.sigev_notify = SIGEV_THREAD;
+	aiocbp->aio_sigevent.sigev_notify_function = aio_callback;
+	aiocbp->aio_sigevent.sigev_notify_attributes = NULL;
+	aiocbp->aio_sigevent.sigev_value.sival_ptr = (void *)g_testfiles[i];
+	aiocbp->aio_sigevent.sigev_un._pad[0] = 0;
+	aiocbp->aio_sigevent.sigev_un._pad[1] = 0;
+	aiocbp->aio_sigevent.sigev_un._pad[2] = 0;
+	aiocbp->aio_sigevent.sigev_un._pad[3] = 0;
+	aiocbp->aio_sigevent.sigev_un._pad[4] = 0;
+	aiocbp->aio_sigevent.sigev_un._pad[5] = 0;
+	aiocbp->aio_sigevent.sigev_un._pad[6] = 0;
+	aiocbp->aio_sigevent
+	    .sigev_un._pad[7] = 0;
 }

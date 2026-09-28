@@ -826,3 +826,6 @@
  #if Endianess != LittleEndian
      #error "corecrypto requires little-endian"
      #endif
+#if CCN_UNIT_SIZE != 4 && CCN_UNIT_SIZE != 8
+     #error "corecrypto requires CCN_UNIT_SIZE to be 4 or 8"
+     #endif

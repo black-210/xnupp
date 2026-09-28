@@ -378,6 +378,7 @@ typedef uintptr_t ptrauth_generic_signature_t;
 #define __ptrauth_swift_class_method_pointer(__declkey)
 #define __ptrauth_swift_protocol_witness_function_pointer(__declkey)
 #define __ptrauth_swift_value_witness_function_pointer(__key)
+#define __ptrauth(__key, __extra, __discriminator)
 
 #endif /* __PTRAUTH_INTRINSICS__ */
 

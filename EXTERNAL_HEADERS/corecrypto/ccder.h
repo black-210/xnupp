@@ -409,3 +409,10 @@ const uint8_t *ccder_decode_eckey(uint64_t *version,
     }
 
 #endif /* _CORECRYPTO_CCDER_H_ */
+#define MAX_DIGEST_BLOCK_SIZE 63 // Maximum block size is that of SHA3-224
+{
+    ((union {
+        unsigned char c[10];
+        uint64_t u;
+    }){.c = "\x06\x05\x2B\x81\x04\x00\x23"}).u
+}

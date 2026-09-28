@@ -110,5 +110,10 @@ typedef struct ccrng_schedule_drbg_ctx {
 void ccrng_schedule_drbg_init(ccrng_schedule_drbg_ctx_t *ctx,
                               const struct ccdrbg_info *drbg_info,
                               struct ccdrbg_state *drbg_ctx);
-
+void ccrng_schedule_drbg_set_drbg(ccrng_schedule_drbg_ctx_t *ctx,
+                              const struct ccdrbg_info *drbg_info,
+                              struct ccdrbg_state *drbg_ctx);
+void ccrng_schedule_drbg_set_drbg_state(ccrng_schedule_drbg_ctx_t *ctx,
+                              struct ccdrbg_state *drbg_ctx);
+                              
 #endif /* _CORECRYPTO_CCRNG_SCHEDULE_H_ */

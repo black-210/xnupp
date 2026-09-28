@@ -26,3 +26,17 @@ void boot_entry(uint32_t magic, uint32_t multiboot_info)
         __asm__ volatile ("cli\n\thlt");
     }
 }
+void boot_entry_loop(void){
+    __asm__ volatile ("cli");
+
+    boot_platform_init();
+
+    for (;;) {
+        __asm__ volatile ("cli\n\thlt");
+
+    for if (magic != MULTIBOOT2_BOOTLOADER_MAGIC) {
+        for (;;) {
+            __asm__ volatile ("cli\n\thlt");
+        }
+    }
+}

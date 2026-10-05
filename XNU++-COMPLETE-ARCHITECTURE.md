@@ -1,6 +1,6 @@
 # XNU++ — Complete Architecture, Layers, Repository and File Guide
 
-**Repository root:** `/data/data/com.termux/files/home/xnupp`  
+
 **Project:** XNU++  
 **Repository:** `https://github.com/black-210/xnupp`
 

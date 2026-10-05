@@ -46,7 +46,7 @@ The core architectural idea is:
 The supplied `pwd` is:
 
 ```text
-/data/data/com.termux/files/home/xnupp
+/home/black/xnuqq
 ```
 
 The supplied top-level tree is:
@@ -1835,6 +1835,6 @@ Remember XNU++ like this:
 
 ## Scope and Accuracy Note
 
-This document is based on the repository tree supplied for `/data/data/com.termux/files/home/xnupp`. It deliberately does not invent a unique role for every upstream XNU test/source file. Where a directory is primarily an upstream subsystem, it is explained as a subsystem and its relationship to XNU++ is described.
+This document is based on the repository tree supplied for `/home/black/xnuqq`. It deliberately does not invent a unique role for every upstream XNU test/source file. Where a directory is primarily an upstream subsystem, it is explained as a subsystem and its relationship to XNU++ is described.
 
 For exact legal ownership, copyright, and provenance of an individual file, inspect the file's copyright/license header and Git history. For exact implementation behavior, inspect the source rather than inferring behavior from filenames or interfaces alone.
